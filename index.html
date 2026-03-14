@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truston Solutions | Tax & Compliance</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --navy: #1a365d;
+            --logo-blue: #2b6cb0;
+            --gold: #c5a059;
+            --light: #f8fafc;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { background: var(--light); color: #333; line-height: 1.6; overflow-x: hidden; }
+
+        /* Navigation */
+        nav {
+            background: var(--white);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 10px 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Responsive Logo Size */
+        .logo-img {
+            height: 100px; /* Large for desktop */
+            width: auto;
+            display: block;
+            transition: 0.3s ease;
+        }
+
+        /* Desktop Menu */
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-menu li { margin-left: 30px; }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--navy);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: 0.3s;
+        }
+
+        .nav-menu a:hover { color: var(--gold); }
+
+        .btn-email {
+            background: var(--navy);
+            color: var(--white) !important;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            color: var(--navy);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 80vh;
+            padding: 180px 20px 80px;
+            background: linear-gradient(rgba(26, 54, 93, 0.85), rgba(26, 54, 93, 0.85)), 
+                        url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 20px; }
+        .hero span { color: var(--gold); }
+        .hero p { font-size: clamp(1rem, 2vw, 1.3rem); max-width: 800px; opacity: 0.9; }
+
+        /* Services Section */
+        .services { padding: 80px 0; }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            transition: 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-bottom: 4px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-bottom-color: var(--gold);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .card i { font-size: 3rem; color: var(--logo-blue); margin-bottom: 20px; }
+        .card h3 { color: var(--navy); margin-bottom: 15px; }
+
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 2px 5px 15px rgba(0,0,0,0.3);
+            z-index: 1001;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .whatsapp-float:hover { transform: scale(1.1); }
+
+        /* Footer */
+        footer {
+            background: var(--navy);
+            color: var(--white);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        /* RESPONSIVE BREAKPOINTS */
+        @media (max-width: 992px) {
+            .logo-img { height: 80px; }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle { display: block; }
+            
+            /* Toggle Menu visibility */
+            .nav-menu {
+                display: none; /* Hidden by default on mobile */
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                flex-direction: column;
+                padding: 20px 0;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+
+            .nav-menu.active { display: flex; }
+
+            .nav-menu li { margin: 15px 0; }
+            .logo-img { height: 70px; }
+            .hero { padding-top: 150px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container nav-flex">
+            <a href="#">
+                <img src="WhatsApp_Image_2026-01-27_at_22.46.42-removebg-preview.png" alt="Truston Solutions Logo" class="logo-img">
+            </a>
+            
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <ul class="nav-menu" id="nav-list">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="mailto:hi@trustonsolutions.in" class="btn-email">Email Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="container">
+            <h1>Secure Your <span>Financial Future</span></h1>
+            <p>Expert Tax Planning, Precise Bookkeeping, and Global Compliance for Modern Businesses.</p>
+        </div>
+    </header>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2 style="text-align:center; color:var(--navy); font-size: clamp(1.8rem, 4vw, 2.5rem);">Our Services</h2>
+            <div class="grid">
+                <div class="card">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <h3>Tax Planning</h3>
+                    <p>Strategic solutions to minimize tax liability and ensure seamless filing.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-file-invoice"></i>
+                    <h3>Bookkeeping</h3>
+                    <p>Clean, organized, and audit-ready financial records for your business.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-ship"></i>
+                    <h3>Exim Compliance</h3>
+                    <p>End-to-end support for export-import regulations and documentation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <a href="https://wa.me/919645800602" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <footer>
+        <div class="container">
+            <p><strong>Truston Solutions</strong></p>
+            <p>36/267, Mannath Building, Thrikkakara, Ernakulam, Kerala</p>
+            <p style="margin: 10px 0;">Contact: +91 9645800602 | hi@trustonsolutions.in</p>
+            <p style="margin-top:20px; opacity:0.6; font-size:0.8rem;">&copy; 2026 Truston Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+
+        menuToggle.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked (important for single-page sites)
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navList.classList.remove('active');
+            });
+        });
+    </script
